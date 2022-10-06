@@ -1,21 +1,28 @@
 import "./App.css";
 import Grid from "@mui/material/Grid";
+import Footer from "./UI/Footer";
+import { ThemeProvider } from "@mui/material/styles";
+import { myTheme } from "./Themes/Theme";
 function App() {
   return (
-    <div className="App">
-      <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="stretch"
-      >
-        <Grid item>Header</Grid>
-        <Grid item>banner</Grid>
-        <Grid item>content</Grid>
-        <Grid item>cprasol</Grid>
-        <Grid item>footer</Grid>
-      </Grid>
-    </div>
+    <ThemeProvider theme={myTheme}>
+      <div className="App">
+        <Grid
+          container
+          direction="column"
+          justifyContent="space-between"
+          alignItems="stretch"
+        >
+          <Grid item>Header</Grid>
+          <Grid item>banner</Grid>
+          <Grid item>content</Grid>
+          <Grid item>cprasol</Grid>
+          <Grid item>
+            <Footer />
+          </Grid>
+        </Grid>
+      </div>
+    </ThemeProvider>
   );
 }
 
