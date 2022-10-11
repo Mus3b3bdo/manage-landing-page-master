@@ -1,5 +1,8 @@
 import { Grid } from "@mui/material";
 import React from "react";
+import MailBox from "../MailBox";
+import FooterNav from "./FooterNav";
+import Social from "./Social";
 
 export default function FooterInfo() {
   return (
@@ -8,16 +11,21 @@ export default function FooterInfo() {
       direction="row-reverse"
       justifyContent="space-around"
       alignItems="center"
-      sx={{ bgcolor: "secondary.main", minHeight: "180px" }}
+      sx={{
+        outline: "1px solid green",
+        bgcolor: "secondary.main",
+        minHeight: "180px",
+        padding: { md: "30px 0", xs: "10px 0" },
+      }}
     >
       <Grid item xs={12} md={4}>
-        mailbox
+        <MailBox />
       </Grid>
       <Grid item xs={12} md={4}>
-        navigation
+        <FooterNav />
       </Grid>
       <Grid item xs={12} md={4}>
-        social
+        <Social />
       </Grid>
     </Grid>
   );

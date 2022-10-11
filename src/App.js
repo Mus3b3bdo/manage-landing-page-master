@@ -28,7 +28,7 @@ function App() {
             <Points />
           </Grid>
           <Grid item>cprasol</Grid>
-          <Grid item>
+          <Grid item mb={0} pb={0}>
             <Footer />
           </Grid>
         </Grid>

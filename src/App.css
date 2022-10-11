@@ -28,6 +28,15 @@ ul > li:hover {
   color: hsl(227, 12%, 61%);
 }
 
+div > li {
+  color: hsl(0, 0%, 98%);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+div > li:hover {
+  color: hsl(12, 88%, 59%);
+}
 @media (max-width: 375px) {
   .background-image-container {
     background-size: 100%;
