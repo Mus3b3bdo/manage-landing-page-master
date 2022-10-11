@@ -3,38 +3,47 @@ import hamburger from "../images/icon-hamburger.svg";
 import close from "../images/icon-close.svg";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
 export default function MobileNav() {
-  const [open, setOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <>
       {open ? (
         <>
-          <img src={close} alt="close" onClick={() => setOpen(false)} />
+          <Button
+            variant="text"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={() => handleClose}
+          >
+            <img src={close} alt="close" />
+          </Button>
           <Menu
             id="mobile-nav"
-            keepMounted
+            anchorEl={anchorEl}
             open={open}
-            onClose={() => setOpen(false)}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            sx={{
-              position: "absolute",
-              display: "flex",
-              //   flexDirection: "column",
-              //   justifyContent: "center",
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={() => setOpen(false)}>Pricing</MenuItem>
-            <MenuItem onClick={() => setOpen(false)}>Product</MenuItem>
-            <MenuItem onClick={() => setOpen(false)}>About Us</MenuItem>
-            <MenuItem onClick={() => setOpen(false)}>Careers</MenuItem>
-            <MenuItem onClick={() => setOpen(false)}>Community</MenuItem>
+            <MenuItem onClick={handleClose}>Pricing</MenuItem>
+            <MenuItem onClick={handleClose}>Product</MenuItem>
+            <MenuItem onClick={handleClose}>About Us</MenuItem>
+            <MenuItem onClick={handleClose}>Careers</MenuItem>
+            <MenuItem onClick={handleClose}>Community</MenuItem>
           </Menu>
         </>
       ) : (
-        <img src={hamburger} alt="menu" onClick={() => setOpen(true)} />
+        <img src={hamburger} alt="menu" onClick={handleClick} />
       )}
     </>
   );
