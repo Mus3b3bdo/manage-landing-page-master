@@ -16,35 +16,68 @@ export default function MobileNav() {
   return (
     <>
       {open ? (
-        <>
-          <Button
-            variant="text"
-            aria-controls={open ? "basic-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-            onClick={() => handleClose}
-          >
-            <img src={close} alt="close" />
-          </Button>
-          <Menu
-            id="mobile-nav"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              "aria-labelledby": "basic-button",
-            }}
-          >
-            <MenuItem onClick={handleClose}>Pricing</MenuItem>
-            <MenuItem onClick={handleClose}>Product</MenuItem>
-            <MenuItem onClick={handleClose}>About Us</MenuItem>
-            <MenuItem onClick={handleClose}>Careers</MenuItem>
-            <MenuItem onClick={handleClose}>Community</MenuItem>
-          </Menu>
-        </>
+        <Button
+          id="nav-button"
+          variant="text"
+          aria-controls={open ? "mobile-nav" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClose}
+        >
+          <img src={close} alt="close" />
+        </Button>
       ) : (
-        <img src={hamburger} alt="menu" onClick={handleClick} />
+        <Button
+          id="nav-button"
+          variant="text"
+          aria-controls={open ? "mobile-nav" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+        >
+          <img src={hamburger} alt="menu" />
+        </Button>
       )}
+      <Menu
+        id="mobile-nav"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "nav-button",
+        }}
+      >
+        <MenuItem
+          sx={{ width: "100%", justifyContent: "center" }}
+          onClick={handleClose}
+        >
+          Pricing
+        </MenuItem>
+        <MenuItem
+          sx={{ width: "100%", justifyContent: "center" }}
+          onClick={handleClose}
+        >
+          Product
+        </MenuItem>
+        <MenuItem
+          sx={{ width: "100%", justifyContent: "center" }}
+          onClick={handleClose}
+        >
+          About Us
+        </MenuItem>
+        <MenuItem
+          sx={{ width: "100%", justifyContent: "center" }}
+          onClick={handleClose}
+        >
+          Careers
+        </MenuItem>
+        <MenuItem
+          sx={{ width: "100%", justifyContent: "center" }}
+          onClick={handleClose}
+        >
+          Community
+        </MenuItem>
+      </Menu>
     </>
   );
 }

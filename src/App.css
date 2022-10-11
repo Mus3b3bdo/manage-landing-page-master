@@ -5,8 +5,8 @@
 
 .background-image-container {
   background-image: url(./images/bg-tablet-pattern.svg);
-  background-position: right;
-  background-size: auto;
+  background-position: 120%;
+  background-size: 50%;
   background-repeat: no-repeat;
 }
 
@@ -26,4 +26,11 @@ ul > li {
 
 ul > li:hover {
   color: hsl(227, 12%, 61%);
+}
+
+@media (max-width: 375px) {
+  .background-image-container {
+    background-size: 100%;
+    background-position: top right;
+  }
 }

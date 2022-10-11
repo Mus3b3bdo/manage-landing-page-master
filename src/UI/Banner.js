@@ -9,11 +9,11 @@ export default function Banner() {
     <Grid
       container
       spacing={1}
-      justifyContent="space-between"
+      justifyContent={{ md: "space-between", xs: "center" }}
       alignItems="center"
       wrap="wrap"
       direction="row-reverse"
-      p={{ md: "0 120px", xs: "0 20px" }}
+      p={{ md: "0 120px", sm: "0 20px" }}
     >
       <Grid item xs={12} md={5}>
         <img
@@ -22,7 +22,7 @@ export default function Banner() {
           style={{ height: "380px", minHeight: "180px", maxWidth: "100%" }}
         />
       </Grid>
-      <Grid item container direction="column" xs={12} md={6} gap={2}>
+      <Grid item container direction="column" xs={11} md={6} gap={2}>
         <Typography
           variant="h1"
           color="secondary.main"
