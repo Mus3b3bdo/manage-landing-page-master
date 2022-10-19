@@ -24,6 +24,7 @@ export default function MailBox() {
             gap: "10px",
             justigyContent: "center",
             alignItems: "center",
+            width: "100%",
           }}
           onSubmit={(e) => {
             e.preventDefault();
@@ -38,17 +39,29 @@ export default function MailBox() {
           <TextField
             error={error}
             id="outlined-error"
-            label="mail"
-            placeholder="Your mail"
-            helperText={error ? "Incorrect entry." : ""}
+            placeholder={error ? "johnmadden/mail" : "Your mail"}
+            helperText={error ? "Please insert a valid email" : ""}
             value={value}
             onChange={(e) => {
               setValue(e.target.value);
+              let regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+              if (value.match(regex)) {
+                setError(false);
+              } else {
+                setError(true);
+              }
+            }}
+            sx={{
+              "& .MuiInputBase-input": {
+                borderRadius: "2rem",
+                backgroundColor: "info.main",
+                border: "1px solid",
+                borderColor: "primary.main",
+                height: "10px",
+              },
             }}
           />
-          <Button type="submit" alignSelf="center">
-            go
-          </Button>
+          <Button type="submit">go</Button>
         </form>
       )}
     </>

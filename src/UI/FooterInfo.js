@@ -9,22 +9,21 @@ export default function FooterInfo() {
     <Grid
       container
       direction="row-reverse"
-      justifyContent="space-around"
+      justifyContent={{ md: "space-between", xs: "center" }}
       alignItems="center"
       sx={{
-        outline: "1px solid green",
         bgcolor: "secondary.main",
         minHeight: "180px",
-        padding: { md: "30px 0", xs: "10px 0" },
+        padding: { md: "0 100px", xs: "10px" },
       }}
     >
-      <Grid item xs={12} md={4}>
+      <Grid item>
         <MailBox />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item>
         <FooterNav />
       </Grid>
-      <Grid item xs={12} md={4}>
+      <Grid item>
         <Social />
       </Grid>
     </Grid>

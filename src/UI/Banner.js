@@ -13,7 +13,7 @@ export default function Banner() {
       alignItems="center"
       wrap="wrap"
       direction="row-reverse"
-      p={{ md: "0 120px", sm: "0 20px" }}
+      p={{ md: "0 100px", xs: "0 10px" }}
     >
       <Grid item xs={12} md={5}>
         <img
