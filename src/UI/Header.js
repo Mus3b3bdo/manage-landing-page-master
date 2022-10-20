@@ -5,6 +5,13 @@ import MobileNav from "./MobileNav";
 import Navigation from "./Navigation";
 export default function Header() {
   const mobile = useMediaQuery(useTheme().breakpoints.down("sm"));
+  const menuItems = [
+    { id: 1, title: "Pricing" },
+    { id: 2, title: "Product" },
+    { id: 3, title: "About us" },
+    { id: 4, title: "Careers" },
+    { id: 5, title: "Community" },
+  ];
   return (
     <Grid
       container
@@ -18,7 +25,13 @@ export default function Header() {
       <Grid item>
         <img src={logo} alt="logo" />
       </Grid>
-      <Grid item>{mobile ? <MobileNav /> : <Navigation />}</Grid>
+      <Grid item>
+        {mobile ? (
+          <MobileNav menuItems={menuItems} />
+        ) : (
+          <Navigation menuItems={menuItems} />
+        )}
+      </Grid>
       <Grid item display={{ xs: "none", md: "block" }}>
         <Button>get started</Button>
       </Grid>

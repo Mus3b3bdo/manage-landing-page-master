@@ -4,7 +4,7 @@ import close from "../images/icon-close.svg";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
-export default function MobileNav() {
+export default function MobileNav({ menuItems }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -47,36 +47,17 @@ export default function MobileNav() {
           "aria-labelledby": "nav-button",
         }}
       >
-        <MenuItem
-          sx={{ width: "100%", justifyContent: "center" }}
-          onClick={handleClose}
-        >
-          Pricing
-        </MenuItem>
-        <MenuItem
-          sx={{ width: "100%", justifyContent: "center" }}
-          onClick={handleClose}
-        >
-          Product
-        </MenuItem>
-        <MenuItem
-          sx={{ width: "100%", justifyContent: "center" }}
-          onClick={handleClose}
-        >
-          About Us
-        </MenuItem>
-        <MenuItem
-          sx={{ width: "100%", justifyContent: "center" }}
-          onClick={handleClose}
-        >
-          Careers
-        </MenuItem>
-        <MenuItem
-          sx={{ width: "100%", justifyContent: "center" }}
-          onClick={handleClose}
-        >
-          Community
-        </MenuItem>
+        {menuItems.map((item) => {
+          return (
+            <MenuItem
+              key={item.id}
+              sx={{ width: "100%", justifyContent: "center" }}
+              onClick={handleClose}
+            >
+              {item.title}
+            </MenuItem>
+          );
+        })}
       </Menu>
     </>
   );

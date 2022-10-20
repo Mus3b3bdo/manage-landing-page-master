@@ -1,14 +1,12 @@
 import React from "react";
 import "../App.css";
-export default function Navigation() {
+export default function Navigation({ menuItems }) {
   return (
     <div className="navigation">
       <ul>
-        <li>Pricing</li>
-        <li>Product</li>
-        <li>About Us</li>
-        <li>Careers</li>
-        <li>Community</li>
+        {menuItems.map((item) => {
+          return <li key={item.id}>{item.title}</li>;
+        })}
       </ul>
     </div>
   );
