@@ -8,7 +8,7 @@ export default function FooterInfo() {
   return (
     <Grid
       container
-      direction="row-reverse"
+      direction={{ md: "row-reverse", xs: "column" }}
       justifyContent={{ md: "space-between", xs: "center" }}
       alignItems="center"
       sx={{

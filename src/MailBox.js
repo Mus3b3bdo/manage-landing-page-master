@@ -52,6 +52,10 @@ export default function MailBox() {
               }
             }}
             sx={{
+              border: "none",
+              "& .MuiInputBase-root": {
+                border: "none",
+              },
               "& .MuiInputBase-input": {
                 borderRadius: "2rem",
                 backgroundColor: "info.main",

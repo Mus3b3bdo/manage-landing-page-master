@@ -6,6 +6,7 @@ import { myTheme } from "./Themes/Theme";
 import Header from "./UI/Header";
 import Banner from "./UI/Banner";
 import Points from "./UI/Points";
+import Corasel from "./UI/Corasel";
 function App() {
   return (
     <ThemeProvider theme={myTheme}>
@@ -27,7 +28,9 @@ function App() {
           <Grid item>
             <Points />
           </Grid>
-          <Grid item>cprasol</Grid>
+          <Grid item>
+            <Corasel />
+          </Grid>
           <Grid item mb={0} pb={0}>
             <Footer />
           </Grid>
