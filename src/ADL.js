@@ -16,7 +16,7 @@ export default function ADL({ data }) {
                 }}
               />
               <Typography
-                variant="h6"
+                variant="h3"
                 color="secondary.main"
                 textAlign="left"
                 display="inline-block"

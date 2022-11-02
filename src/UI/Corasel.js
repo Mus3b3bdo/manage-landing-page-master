@@ -45,27 +45,29 @@ export default function Corasel() {
     },
   ];
   return (
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      gap={3}
-      sx={{ margin: "30px 0", padding: { sx: "0 10px" } }}
-    >
-      <Typography
-        variant="h4"
-        color="secondary.main"
-        maxWidth="20ch"
-        sx={{ margin: "60px auto" }}
+    <section>
+      <Grid
+        container
+        direction="column"
+        alignItems="center"
+        gap={3}
+        sx={{ margin: "30px 0", padding: { sx: "0 10px" } }}
       >
-        What they've said
-      </Typography>
-      {mobile ? (
-        <TestimonialMobile dataTestimonial={dataTestimonial} />
-      ) : (
-        <Testimonial dataTestimonial={dataTestimonial} />
-      )}
-      <Button>Get started</Button>
-    </Grid>
+        <Typography
+          variant="h2"
+          color="secondary.main"
+          maxWidth="20ch"
+          sx={{ margin: "60px auto", fontSize: "2rem" }}
+        >
+          What they've said
+        </Typography>
+        {mobile ? (
+          <TestimonialMobile dataTestimonial={dataTestimonial} />
+        ) : (
+          <Testimonial dataTestimonial={dataTestimonial} />
+        )}
+        <Button>Get started</Button>
+      </Grid>
+    </section>
   );
 }

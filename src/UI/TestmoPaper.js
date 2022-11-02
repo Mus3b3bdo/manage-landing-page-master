@@ -21,6 +21,7 @@ export default function TestmoPaper({ item }) {
     >
       <Avatar
         src={item.image}
+        alt={item.name}
         sx={{
           position: "absolute",
           top: "-15%",

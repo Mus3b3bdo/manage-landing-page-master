@@ -17,14 +17,14 @@ function App() {
           justifyContent="space-between"
           alignItems="stretch"
         >
-          <div className="background-image-container">
+          <header className="background-image-container">
             <Grid item>
               <Header />
             </Grid>
             <Grid item>
               <Banner />
             </Grid>
-          </div>
+          </header>
           <Grid item>
             <Points />
           </Grid>
