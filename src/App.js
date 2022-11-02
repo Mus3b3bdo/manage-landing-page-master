@@ -25,12 +25,14 @@ function App() {
               <Banner />
             </Grid>
           </header>
-          <Grid item>
-            <Points />
-          </Grid>
-          <Grid item>
-            <Corasel />
-          </Grid>
+          <main>
+            <Grid item>
+              <Points />
+            </Grid>
+            <Grid item>
+              <Corasel />
+            </Grid>
+          </main>
           <Grid item mb={0} pb={0}>
             <Footer />
           </Grid>

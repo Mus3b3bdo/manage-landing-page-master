@@ -17,9 +17,10 @@ export default function Points() {
       >
         <Grid item container flexDirection="column" gap={4} xs={12} md={6}>
           <Typography
-            variant="h4"
+            variant="h2"
             color="secondary.main"
             maxWidth="20ch"
+            fontSize={40}
             textAlign={{ md: "left", xs: "center" }}
           >
             What's different about Manage?

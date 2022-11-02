@@ -12,7 +12,7 @@ export default function ADLMobile({ data }) {
             sx={{ width: "100%", paddingRight: 0, margin: "2rem 0 " }}
           >
             <Typography
-              variant="h6"
+              variant="h3"
               color="secondary.main"
               bgcolor="primary.light"
               textAlign="left"

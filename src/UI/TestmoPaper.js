@@ -29,7 +29,7 @@ export default function TestmoPaper({ item }) {
           height: "60px",
         }}
       />
-      <Typography variant="h6" color="secondary.main">
+      <Typography variant="h3" color="secondary.main" fontSize={20}>
         {item.name}
       </Typography>
       <Typography

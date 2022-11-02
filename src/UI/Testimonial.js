@@ -4,7 +4,7 @@ export default function Testimonial({ dataTestimonial }) {
   return (
     <div style={{ display: "flex", justifyContent: "space-around" }}>
       {dataTestimonial.map((item) => {
-        return <TestmoPaper item={item} />;
+        return <TestmoPaper item={item} key={item.id} />;
       })}
     </div>
   );
